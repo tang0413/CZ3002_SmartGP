@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EformActivity"
+    android:background="@drawable/layout_bg"
+    android:layout_margin="5dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="620dp"
+        tools:ignore="MissingConstraints"
+        android:id="@+id/scrollview">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:padding="8dp"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Travel Declaration"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:id="@+id/tdtitle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Have you travelled overseas for the last 14 days?"
+                android:layout_below="@id/tdtitle"
+                android:id="@+id/Q1title"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
+
+            <RadioGroup
+                android:id="@+id/radioTravel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Q1title">
+
+                <RadioButton
+                    android:id="@+id/radioNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/radio_no"
+                    android:onClick="travelSelected"/>
+
+                <RadioButton
+                    android:id="@+id/radioYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/radio_yes"
+                    android:onClick="travelSelected"/>
+
+            </RadioGroup>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:layout_below="@id/radioTravel"
+                android:id="@+id/travelDetails"
+                android:visibility="gone">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:met_floatingLabel="normal"
+                    android:textSize="15sp"
+                    app:met_floatingLabelTextColor="#000"
+                    android:hint="Country of Visit"
+                    android:id="@+id/countryVisitted"/>
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_below="@id/countryVisitted"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelTextColor="#000"
+                    android:hint="Date of return"
+                    android:id="@+id/dateOfReturn"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reason for Visit"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:id="@+id/reasonForVisitTitle"
+                android:layout_below="@id/travelDetails"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Symptoms: "
+                android:layout_below="@id/reasonForVisitTitle"
+                android:id="@+id/symptoms"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
+
+            <CheckBox
+                android:id="@+id/checkbox_fever"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/symptoms"
+                android:text="@string/symptom_fever"
+                android:onClick="onCheckboxSymptoms"/>
+
+            <CheckBox android:id="@+id/checkbox_cough"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkbox_fever"
+                android:text="@string/symptom_cough"
+                android:onClick="onCheckboxSymptoms"/>
+
+            <CheckBox android:id="@+id/checkbox_sorethroat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkbox_cough"
+                android:text="@string/symptom_sorethroat"
+                android:onClick="onCheckboxSymptoms"/>
+
+            <CheckBox android:id="@+id/checkbox_flu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkbox_sorethroat"
+                android:text="@string/symptom_flu"
+                android:onClick="onCheckboxSymptoms"/>
+
+            <CheckBox android:id="@+id/checkbox_diarrhea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkbox_flu"
+                android:text="@string/symptom_diarrhea"
+                android:onClick="onCheckboxSymptoms"/>
+
+            <CheckBox android:id="@+id/checkbox_vomit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkbox_diarrhea"
+                android:text="@string/symptom_vomit"
+                android:onClick="onCheckboxSymptoms"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="normal"
+                android:textSize="15sp"
+                app:met_floatingLabelTextColor="#000"
+                android:layout_below="@id/checkbox_vomit"
+                android:hint="Others"
+                android:id="@+id/others"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Any additional comments: "
+                android:layout_below="@id/others"
+                android:id="@+id/commentsTitle"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                app:met_floatingLabel="normal"
+                android:textSize="15sp"
+                app:met_floatingLabelTextColor="#000"
+                android:layout_below="@id/commentsTitle"
+                android:id="@+id/comments"/>
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/buttonstylegradient"
+        android:text="Submit"
+        android:layout_marginBottom="20dp"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

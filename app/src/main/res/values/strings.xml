@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">SmartGP</string>
+
+    <string-array name="gender">
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+
+    <string-array name="bloodType">
+        <item>A</item>
+        <item>B</item>
+        <item>AB</item>
+        <item>O</item>
+    </string-array>
+
+    <string name="radio_yes">Yes</string>
+    <string name="radio_no">No</string>
+
+    <string name="symptom_fever">Fever</string>
+    <string name="symptom_cough">Cough</string>
+    <string name="symptom_sorethroat">Sore Throat</string>
+    <string name="symptom_flu">Flu</string>
+    <string name="symptom_diarrhea">Diarrhea</string>
+    <string name="symptom_vomit">Vomit</string>
+
+
+
+    <style name="MenuStyle" parent="Theme.AppCompat.Light">
+        <item name="android:background">@android:color/white</item>
+    </style>
 </resources>
