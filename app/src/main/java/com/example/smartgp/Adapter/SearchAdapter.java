@@ -21,10 +21,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     ArrayList<String> phoneNumberList;
     ArrayList<String> openingHourList;
 
-
-    class SearchViewHolder extends RecyclerView.ViewHolder {
+    class SearchViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView clinic_id, clinic_name, address, phoneNo, openHour, b_clinic_id, b_clinic_name, b_address, b_phoneNo, b_openHour;
         LinearLayout linearLayout;
+        int pos = 0;
 
         public SearchViewHolder(View itemView, View itemView2) {
             super(itemView);
@@ -40,14 +40,15 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             b_phoneNo = (TextView) itemView2.findViewById(R.id.btm_clinic_HP);
             b_openHour = (TextView) itemView2.findViewById(R.id.btm_open_Hour);
 
+            itemView.setOnClickListener(this);
+            System.out.println("print on slide up panel3");
             //select clinic
             /*linearLayout = itemView.findViewById(R.id.search_linear_layout);
 
             linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int pos = getAdapterPosition();
-
+                int pos = getAdapterPosition();
                     if (pos != RecyclerView.NO_POSITION) {
                         b_clinic_id.setText(clinicIdList.get(pos));
                         b_clinic_name.setText(clinicNameList.get(pos));
@@ -58,11 +59,21 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                 }
             });*/
         }
-    }
 
-    /*public interface SelectedClinic {
-        void selectedClinic();
-    }*/
+        @Override
+        public void onClick(View v) {
+            System.out.println("print on slide up panel");
+            pos = getAdapterPosition();
+            if (pos != RecyclerView.NO_POSITION) {
+                System.out.println("current post" + pos);
+                b_clinic_id.setText(clinicIdList.get(pos));
+                b_clinic_name.setText(clinicNameList.get(pos));
+                b_address.setText(addressList.get(pos));
+                b_phoneNo.setText(phoneNumberList.get(pos));
+                b_openHour.setText(openingHourList.get(pos));
+            }
+        }
+    }
 
     public SearchAdapter(Context context, ArrayList<String> clinicIdList, ArrayList<String> clinicNameList, ArrayList<String> addressList, ArrayList<String> phoneNumberList, ArrayList<String> openingHourList) {
         this.context = context;
@@ -87,15 +98,16 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         holder.address.setText(addressList.get(position));
         holder.phoneNo.setText(phoneNumberList.get(position));
         holder.openHour.setText(openingHourList.get(position));
-
+        System.out.println("print on slide up panel2");
         /*holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.b_clinic_id.setText(clinicIdList.get(position));
-                holder.b_clinic_name.setText(clinicNameList.get(position));
-                holder.b_address.setText(addressList.get(position));
-                holder.b_phoneNo.setText(phoneNumberList.get(position));
-                holder.b_openHour.setText(openingHourList.get(position));
+                int pos = holder.getAdapterPosition();
+                holder.b_clinic_id.setText(clinicIdList.get(pos));
+                holder.b_clinic_name.setText(clinicNameList.get(pos));
+                holder.b_address.setText(addressList.get(pos));
+                holder.b_phoneNo.setText(phoneNumberList.get(pos));
+                holder.b_openHour.setText(openingHourList.get(pos));
             }
         });*/
 
