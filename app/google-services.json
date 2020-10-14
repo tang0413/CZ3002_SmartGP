@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "779903527275",
+    "firebase_url": "https://cz3002-60b38.firebaseio.com",
+    "project_id": "cz3002-60b38",
+    "storage_bucket": "cz3002-60b38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779903527275:android:9653cec82a84d7cbec442e",
+        "android_client_info": {
+          "package_name": "com.example.smartgp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779903527275-qv0slaibq4v8b8obnk9n2gf9jq28t76a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartgp",
+            "certificate_hash": "66f8b57f769af0a847160bdf4b82131f1403767c"
+          }
+        },
+        {
+          "client_id": "779903527275-5sf3ujitlg2qcj51t0q9rvtnb2ajqd8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKjiV7fYE8OW3LHqPNXpNr2oFT1lXyIzs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779903527275-5sf3ujitlg2qcj51t0q9rvtnb2ajqd8u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
