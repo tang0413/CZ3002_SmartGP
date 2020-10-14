@@ -1,15 +1,15 @@
 package com.example.smartgp;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.smartgp.Model.Patient;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -27,8 +27,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -93,18 +91,24 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        System.out.println("handleABC");
         try{
+            System.out.println("log try");
             GoogleSignInAccount acc = completedTask.getResult(ApiException.class);
             Toast.makeText(SignInActivity.this, "Sign In Successful", Toast.LENGTH_SHORT).show();
+            System.out.println("Acc ID " + acc.getIdToken());
             FirebaseGoogleAuth(acc);
         }
         catch(ApiException e) {
+            System.out.println("log catch");
             Toast.makeText(SignInActivity.this, "Sign In Failed", Toast.LENGTH_SHORT).show();
-            FirebaseGoogleAuth(null);
+            System.out.println("FAIL"+e.getStatusCode());
+            //FirebaseGoogleAuth(null);
         }
     }
 
     private void FirebaseGoogleAuth(GoogleSignInAccount acct){
+        System.out.println("googleauth" + acct.getIdToken());
         AuthCredential authCredential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(authCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -143,7 +147,7 @@ public class SignInActivity extends AppCompatActivity {
             Toast.makeText(SignInActivity.this, "Welcome back, " + personName, Toast.LENGTH_SHORT).show();
 
             //redirect to main activity
-            Intent intent = new Intent(SignInActivity.this, NurseChatActivity.class);
+            Intent intent = new Intent(SignInActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }

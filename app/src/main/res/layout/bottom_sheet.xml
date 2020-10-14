@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/design_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/primary_text_light"
+    android:minHeight="30dp"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="30dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="1dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/btm_clinic_ID"
+                android:layout_width="0dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/btm_clinic_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clinic Name goes here"
+                android:textColor="#212121"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/btm_clinic_Address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address goes here" />
+
+            <TextView
+                android:id="@+id/btm_clinic_HP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Number goes here" />
+
+            <TextView
+                android:id="@+id/btm_open_Hour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opening Hour goes here" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

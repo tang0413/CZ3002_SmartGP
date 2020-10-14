@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">SmartGP</string>
 
+    <string name="key" translatable="false">AIzaSyDyy5taonGoMdBkCd-jeUs7K842KQG81jg</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+
+
     <string-array name="gender">
         <item>Female</item>
         <item>Male</item>
@@ -22,7 +27,7 @@
     <string name="symptom_flu">Flu</string>
     <string name="symptom_diarrhea">Diarrhea</string>
     <string name="symptom_vomit">Vomit</string>
-
+    <string name="google_map_key">AIzaSyDyy5taonGoMdBkCd</string>
 
 
     <style name="MenuStyle" parent="Theme.AppCompat.Light">
